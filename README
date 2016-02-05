@@ -1,0 +1,40 @@
+OVERVIEW
+========
+
+This project is designed to accomplish the following goals:
+
+1) Monitor a port that is connected to a switch. Wait until the switch is
+   pressed.
+2) Once pressed, the routine should keep track of how long the switch is held
+   down.
+3) Wait for approximately one second.
+4) Using another port connected to a LED, turn on the LED for the same amount
+   of time that the switch was pressed earlier.
+
+
+COMPILING
+=========
+
+To build this project, simply run the Make utility.
+
+$ make
+
+
+INSTALLING
+==========
+
+To install the code to the ATMega32, we once again use Make.
+
+$ make install
+
+
+RUNNING
+=======
+
+Hell if I know.
+
+
+CREDITS
+=======
+
+Written by Mason Fabel on 5 February 2016.
