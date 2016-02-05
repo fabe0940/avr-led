@@ -31,7 +31,8 @@ $ make install
 RUNNING
 =======
 
-Hell if I know.
+The program will begin running automatically after running 'make install'. To
+restart the program, hit the 'RESET' switch on the development board.
 
 
 DOCUMENTATION

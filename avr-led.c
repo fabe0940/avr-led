@@ -2,24 +2,42 @@
 #include <stdlib.h>
 #include <avr/io.h>
 #include <avr/pgmspace.h>
+#include "io.h"
+#include "state.h"
+#include "timer.h"
 
-int i;
-
-void delay (unsigned int dly) {
-	for(i = dly; i != 0; i--) ;
-}
-
+uint8_t state;
+uint8_t delay;
+void init(void);
 
 int main(void) {
-	uint8_t cnt;
+	init();
 
-	DDRB = 0xff;
-
-	while (1)
-	for ( cnt=0; cnt <= 0xff; cnt++ ) {
-		PORTB = ~cnt;
-		delay(65000U);
+	while(1) {
+		io_out(PORT_B, io_in(PORT_A));
 	}
+
+/*
+	while (1) {
+		switch (state) 
+			case STATE_START:
+				break;
+			case STATE_PRESS:
+				break;
+			case STATE_WAIT:
+				break;
+			case STATE_LED:
+				break;
+			case STATE_END:
+				do nothing
+				break;
+		}
+	}
+*/
 	
 	exit(0);
+}
+
+void init(void) {
+	state = STATE_START;
 }
