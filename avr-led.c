@@ -17,7 +17,7 @@ int main(void) {
 	while (1) {
 		switch (state) {
 			case STATE_START:
-				io_out(PORT_B, 0x00);
+				io_out(PORT_B, 0x01);
 
 				if (io_in(PORT_A)) {
 					timer_start();
@@ -26,7 +26,7 @@ int main(void) {
 
 				break;
 			case STATE_PRESS:
-				io_out(PORT_B, 0x00);
+				io_out(PORT_B, 0x03);
 
 				if (!io_in(PORT_A)) {
 					timer_end();

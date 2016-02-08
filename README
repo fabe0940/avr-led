@@ -28,11 +28,50 @@ To install the code to the ATMega32, we once again use Make.
 $ make install
 
 
+HARDWARE
+========
+
+Attach PORTA to SWITCHES and PORTB to LEDS.
+
+
 RUNNING
 =======
 
 The program will begin running automatically after running 'make install'. To
-restart the program, hit the 'RESET' switch on the development board.
+restart the program, hit the RESET switch on the development board.
+
+For steps #1 and #2, any switch can be used. This program looks for a switch to
+be pressed, and does not check which one is chosen.
+
+During steps #1 - #3, LED0 will be lit to indicate that the program is running.
+During step #2, LED1 will also be lit to indicate that the program has detected
+the button press and is keeping track of time for later. During step #4, all
+LEDs will be lit. After step #4 is completed, all LEDs will be turned off.
+
+To restart the program, press the RESET switch.
+
+
+SIZE
+====
+
+As part of this assignment, we were asked to determine the size in bytes of
+each function used in this project. This data is most easily presented in a
+table.
+
++-------------+------+
+| FUNCTION    | SIZE |
++-------------+------+
+| __vector_11 |   92 |
+| init        |   20 |
+| io_in       |  150 |
+| io_out      |  160 |
+| main        |  296 |
+| timer_end   |   32 |
+| timer_start |   76 |
++-------------+------+
+
+Note that __vector_11 in the table above corresponds to the ISR(TIMER0_OVF_vect)
+interrupt service routine from timer.c.
 
 
 DOCUMENTATION

@@ -16,7 +16,6 @@ install : $(APPLICATION_NAME)
 $(APPLICATION_NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 	objcopy -S -O ihex $(APPLICATION_NAME) $(APPLICATION_NAME).hex
-	rm -f $(APPLICATION_NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $<
@@ -26,7 +25,7 @@ io.c : io.h
 timer.c : timer.h
 
 clean :
-	\rm -f $(APPLICATION_NAME).hex $(OBJ)
+	\rm -f $(APPLICATION_NAME) $(APPLICATION_NAME).hex $(OBJ)
 
 rebuild :
 	make clean
