@@ -28,11 +28,27 @@ To install the code to the ATMega32, we once again use Make.
 $ make install
 
 
+HARDWARE
+========
+
+Attach PORTA to SWITCHES and PORTB to LEDS.
+
+
 RUNNING
 =======
 
 The program will begin running automatically after running 'make install'. To
-restart the program, hit the 'RESET' switch on the development board.
+restart the program, hit the RESET switch on the development board.
+
+For steps #1 and #2, any switch can be used. This program looks for a switch to
+be pressed, and does not check which one is chosen.
+
+During steps #1 - #3, LED0 will be lit to indicate that the program is running.
+During step #2, LED1 will also be lit to indicate that the program has detected
+the button press and is keeping track of time for later. After step #4 is
+completed, all LEDs will be turned off.
+
+To restart the program, press the RESET switch.
 
 
 DOCUMENTATION
